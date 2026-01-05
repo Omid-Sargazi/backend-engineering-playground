@@ -43,9 +43,9 @@ public class Program
 
     }
 
-    record Customer(int Id, string Name, string City, decimal TotalPurchase);
 
 
 
 
 }
+    record Customer(int Id, string Name, string City, decimal TotalPurchase);
