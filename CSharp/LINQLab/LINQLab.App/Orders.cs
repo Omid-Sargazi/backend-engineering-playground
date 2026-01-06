@@ -77,8 +77,27 @@ namespace LINQLab.App
             {
                 Console.WriteLine($"{item.OrderId} | {item.CustomerName} | {item.Amount}");
             }
-            
 
+
+            var highValueCustomersQuery =
+    customers.Where(c => c.TotalPurchase > 1000);
+
+            customers.Add(new Customer(10, "NewCustomer", "Tehran", 5000));
+
+            var resultDeferred = highValueCustomersQuery.ToList();
+
+            var resultImmediate =
+                customers.Where(c => c.TotalPurchase > 1000)
+                         .ToList();
+
+
+            Console.WriteLine("\nDeferred Execution Result:");
+            foreach (var c in resultDeferred)
+                Console.WriteLine(c.Name);
+
+            Console.WriteLine("\nImmediate Execution Result:");
+            foreach (var c in resultImmediate)
+                Console.WriteLine(c.Name);
 
 
         }
