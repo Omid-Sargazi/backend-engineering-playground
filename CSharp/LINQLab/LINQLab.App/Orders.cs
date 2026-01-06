@@ -64,6 +64,23 @@ namespace LINQLab.App
                         Console.WriteLine($"{item.OrderId} | {item.CustomerName} | {item.City} | {item.Amount}");
                     }
 
-                }
+            int pageNumber = 1;
+            int pageSize = 3;
+
+            var pagedOrders = orderReport
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+
+            Console.WriteLine("\nPaged Result:");
+            foreach (var item in pagedOrders)
+            {
+                Console.WriteLine($"{item.OrderId} | {item.CustomerName} | {item.Amount}");
+            }
+            
+
+
+
+        }
     }
 }
