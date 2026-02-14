@@ -14,7 +14,7 @@ namespace DesignPatternsInCSharp.StrategyPattern.WithoutPattern
             {
                 Console.WriteLine("Paid by Credit Card");
             }
-            else if(type=="P[aypal")
+            else if(type=="Paypal")
             {
                 Console.WriteLine("Paid by Paypal");
             }
