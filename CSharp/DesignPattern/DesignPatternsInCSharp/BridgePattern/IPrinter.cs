@@ -39,4 +39,24 @@ namespace DesignPatternsInCSharp.BridgePattern
 
         public abstract void Print();
     }
+
+    public class PdfDocument : Document
+    {
+        public PdfDocument(IPrinter printer) : base(printer) { }
+
+        public override void Print()
+        {
+            _printer.Print("PDF File Content");
+        }
+    }
+
+    public class WordDocument : Document
+    {
+        public WordDocument(IPrinter printer) : base(printer) { }
+
+        public override void Print()
+        {
+            _printer.Print("Word File Content");
+        }
+    }
 }
