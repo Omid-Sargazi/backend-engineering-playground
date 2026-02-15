@@ -16,7 +16,7 @@ namespace DesignPatternsInCSharp.BridgePattern
     {
         public void Print(string context)
         {
-            Console.WriteLine($"Printing from PC: {content}");
+            Console.WriteLine($"Printing from PC: {context}");
         }
     }
 
@@ -24,7 +24,19 @@ namespace DesignPatternsInCSharp.BridgePattern
     {
         public void Print(string context)
         {
-            Console.WriteLine($"Printing from Android: {content}");
+            Console.WriteLine($"Printing from Android: {context}");
         }
+    }
+
+    public abstract class Document
+    {
+        protected IPrinter _printer;
+
+        protected Document(IPrinter printer)
+        {
+            _printer = printer;
+        }
+
+        public abstract void Print();
     }
 }
