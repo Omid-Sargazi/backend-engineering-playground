@@ -21,4 +21,40 @@ namespace DesignPatternsInCSharp.BridgePattern.PaymentSystem
             Console.WriteLine($"Processing {amount} via Zarinpal");
         }
     }
+
+    public abstract class Payment
+    {
+        protected IPaymentGateway _gateway;
+
+        protected Payment(IPaymentGateway gateway)
+        {
+            _gateway = gateway;
+        }
+
+        public abstract void Pay(decimal amount);
+    }
+
+    public class CreditCardPayment : Payment
+    {
+        public CreditCardPayment(IPaymentGateway gateway)
+            : base(gateway) { }
+
+        public override void Pay(decimal amount)
+        {
+            Console.WriteLine("Validating Credit Card...");
+            _gateway.ProcessPayment(amount);
+        }
+    }
+
+    public class CryptoPayment : Payment
+    {
+        public CryptoPayment(IPaymentGateway gateway)
+            : base(gateway) { }
+
+        public override void Pay(decimal amount)
+        {
+            Console.WriteLine("Validating Crypto Wallet...");
+            _gateway.ProcessPayment(amount);
+        }
+    }
 }
