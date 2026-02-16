@@ -25,4 +25,16 @@ namespace DesignPatternsInCSharp.BridgePattern
 
         public void Log(string message) => File.AppendAllText("log.txt", $"File Log: {message}\n");
     }
+
+    public abstract class ApplicationService
+    {
+        protected ILogger _logger;
+
+        public ApplicationService(ILogger logger)
+        {
+            _logger = logger;
+        }
+
+        public abstract void Execute();
+    }
 }
