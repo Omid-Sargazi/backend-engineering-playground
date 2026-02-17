@@ -10,4 +10,20 @@ namespace DesignPatternsInCSharp.BridgePattern
     {
         void Render(string shapeName);
     }
+
+    public class OpenGLRenderer : IRenderer
+    {
+        public void Render(string shapeName)
+        {
+            Console.WriteLine($"Rendering {shapeName} using OpenGL");
+        }
+    }
+
+    public class DirectXRenderer : IRenderer
+    {
+        public void Render(string shapeName)
+        {
+            Console.WriteLine($"Rendering {shapeName} using DirectX");
+        }
+    }
 }
