@@ -38,4 +38,27 @@ namespace DesignPatternsInCSharp.BridgePattern
 
         public abstract void Notify(string message);
     }
+    public class AlertNotification : Notification
+    {
+        public AlertNotification(INotificationSender sender) : base(sender)
+        {
+        }
+
+        public override void Notify(string message)
+        {
+            _sender.Send($"[ALERT] {message}");
+        }
+    }
+
+    public class ReminderNotification : Notification
+    {
+        public ReminderNotification(INotificationSender sender) : base(sender)
+        {
+        }
+
+        public override void Notify(string message)
+        {
+            _sender.Send($"[REMINDER] {message}");
+        }
+    }
 }
