@@ -10,4 +10,20 @@ namespace DesignPatternsInCSharp.BridgePattern
     {
         void Send(string message);
     }
+
+    public class EmailSender2 : INotificationSender
+    {
+        public void Send(string message)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class SmsSender2 : INotificationSender
+    {
+        public void Send(string message)
+        {
+            Console.WriteLine($"Sending SMS: {message}");
+        }
+    }
 }
