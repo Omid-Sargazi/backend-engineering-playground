@@ -39,4 +39,27 @@ namespace DesignPatternsInCSharp.BridgePattern
         public abstract void Draw();
     }
 
+    public class Circle : Shape
+    {
+        public Circle(IRenderer renderer)
+            : base(renderer) { }
+
+        public override void Draw()
+        {
+            _renderer.Render("Circle");
+        }
+    }
+
+    public class Rectangle : Shape
+    {
+        public Rectangle(IRenderer renderer)
+            : base(renderer) { }
+
+        public override void Draw()
+        {
+            _renderer.Render("Rectangle");
+        }
+    }
+
+
 }
