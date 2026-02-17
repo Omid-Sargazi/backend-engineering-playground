@@ -26,4 +26,16 @@ namespace DesignPatternsInCSharp.BridgePattern
             Console.WriteLine($"Sending SMS: {message}");
         }
     }
+
+    public abstract class Notification
+    {
+        protected INotificationSender _sender;
+
+        protected Notification(INotificationSender sender)
+        {
+            _sender = sender;
+        }
+
+        public abstract void Notify(string message);
+    }
 }
