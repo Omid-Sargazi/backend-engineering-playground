@@ -26,4 +26,16 @@ namespace DesignPatternsInCSharp.BridgePattern.ReportingEngine
             Console.WriteLine("Exporting report as Excel");
         }
     }
+
+    public abstract class Report
+    {
+        protected IReportExporter _exporter;
+
+        protected Report(IReportExporter exporter)
+        {
+            _exporter = exporter;
+        }
+
+        public abstract void Generate();
+    }
 }
