@@ -38,4 +38,28 @@ namespace DesignPatternsInCSharp.BridgePattern.ReportingEngine
 
         public abstract void Generate();
     }
+
+    public class SalesReport : Report
+    {
+        public SalesReport(IReportExporter exporter)
+            : base(exporter) { }
+
+        public override void Generate()
+        {
+            Console.WriteLine("Generating sales report data...");
+            _exporter.Export("Sales Data");
+        }
+    }
+
+    public class InventoryReport : Report
+    {
+        public InventoryReport(IReportExporter exporter)
+            : base(exporter) { }
+
+        public override void Generate()
+        {
+            Console.WriteLine("Generating inventory report data...");
+            _exporter.Export("Inventory Data");
+        }
+    }
 }
