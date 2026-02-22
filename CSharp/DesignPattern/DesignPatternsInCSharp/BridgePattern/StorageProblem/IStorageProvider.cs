@@ -8,6 +8,6 @@ namespace DesignPatternsInCSharp.BridgePattern.StorageProblem
 {
     public interface IStorageProvider
     {
-        void Upload(string fileName, byte[] data)
+        void Upload(string fileName, byte[] data);
     }
 }

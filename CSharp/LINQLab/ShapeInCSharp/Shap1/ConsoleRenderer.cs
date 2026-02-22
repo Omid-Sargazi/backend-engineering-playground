@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ShapeInCSharp.Shap1
+{
+    public class ConsoleRenderer : IRenderer
+    {
+        public void DrawPoint(Point2D point)
+        {
+            if(point.X >=0 && point.Y >=0 && 
+                point.X <Console.WindowWidth && 
+                point.Y <Console.WindowHeight)
+            {
+                Console.SetCursorPosition(point.X, point.Y);
+                Console.Write("*");
+            }
+        }
+    }
+}
