@@ -10,4 +10,20 @@ namespace DesignPatternsInCSharp.BridgePattern.ReportingEngine
     {
         void Export(string reportData);
     }
+
+    public class PdfExporter : IReportExporter
+    {
+        public void Export(string reportData)
+        {
+            Console.WriteLine("Exporting report as PDF");
+        }
+    }
+
+    public class ExcelExporter : IReportExporter
+    {
+        public void Export(string reportData)
+        {
+            Console.WriteLine("Exporting report as Excel");
+        }
+    }
 }
