@@ -1,3 +1,4 @@
+using ReportingApi.Abstractions;
 using ReportingApi.Exporters;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<PdfExporter>();
 builder.Services.AddScoped<ExcelExporter>();
+builder.Services.AddScoped<IReportExporter, PdfExporter>();
+builder.Services.AddScoped<IReportExporter, ExcelExporter>();
 
 var app = builder.Build();
 
