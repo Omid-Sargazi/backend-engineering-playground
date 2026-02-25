@@ -11,4 +11,8 @@ namespace DesignPatternsInCSharp.Composition.AmazonOrder
         decimal CalculateShippingCost();
         string Ship();
     }
+    public interface IPricingStrategy
+    {
+        decimal CalculatePrice(decimal basePrice);
+    }
 }
