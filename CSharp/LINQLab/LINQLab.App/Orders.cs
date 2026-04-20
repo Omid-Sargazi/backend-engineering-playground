@@ -17,6 +17,8 @@ namespace LINQLab.App
             Amount = amount;
         }
 
+
+
     }
 
 
