@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeInCSharp", "ShapeInCSh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportingApi", "ReportingApi\ReportingApi.csproj", "{92B6B389-45CD-4337-BE65-62943C8E969D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithems", "AlgorithemProblems\Algorithems\Algorithems.csproj", "{CE6E64E1-AB48-4B5E-9ED4-7B26576C6D29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{92B6B389-45CD-4337-BE65-62943C8E969D}.Release|x64.Build.0 = Release|Any CPU
 		{92B6B389-45CD-4337-BE65-62943C8E969D}.Release|x86.ActiveCfg = Release|Any CPU
 		{92B6B389-45CD-4337-BE65-62943C8E969D}.Release|x86.Build.0 = Release|Any CPU
+		{CE6E64E1-AB48-4B5E-9ED4-7B26576C6D29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE6E64E1-AB48-4B5E-9ED4-7B26576C6D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE6E64E1-AB48-4B5E-9ED4-7B26576C6D29}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CE6E64E1-AB48-4B5E-9ED4-7B26576C6D29}.Debug|x64.Build.0 = Debug|Any CPU
+		{CE6E64E1-AB48-4B5E-9ED4-7B26576C6D29}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CE6E64E1-AB48-4B5E-9ED4-7B26576C6D29}.Debug|x86.Build.0 = Debug|Any CPU
+		{CE6E64E1-AB48-4B5E-9ED4-7B26576C6D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE6E64E1-AB48-4B5E-9ED4-7B26576C6D29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE6E64E1-AB48-4B5E-9ED4-7B26576C6D29}.Release|x64.ActiveCfg = Release|Any CPU
+		{CE6E64E1-AB48-4B5E-9ED4-7B26576C6D29}.Release|x64.Build.0 = Release|Any CPU
+		{CE6E64E1-AB48-4B5E-9ED4-7B26576C6D29}.Release|x86.ActiveCfg = Release|Any CPU
+		{CE6E64E1-AB48-4B5E-9ED4-7B26576C6D29}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
