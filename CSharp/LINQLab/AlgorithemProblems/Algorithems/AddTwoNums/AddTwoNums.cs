@@ -23,4 +23,19 @@ namespace Algorithems.AddTwoNums
             return [0,0];
         }
     }
-}
+
+    public int[] Execute2(int[] args, int target)
+        {
+            var dict = new Dictionary<int, int>();
+            for (int i = 0; i < args.Length; i++)
+            {
+                int complement = target - args[i];
+                if (dict.ContainsKey(complement))
+                {
+                    return new int[] { dict[complement], i };
+                }
+                dict[args[i]] = i;
+            }
+            return new int[] { -1, -1 };
+        }
+    }
