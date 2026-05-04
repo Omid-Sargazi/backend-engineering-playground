@@ -11,20 +11,20 @@ namespace Algorithems.AddTwoNums
         public int[] Execute(int[] args, int target)
         {
             int left = 0; int right = args.Length;
-            for(int i = left; i<=right;i++)
+            for (int i = left; i <= right; i++)
             {
-                if (args[left] + args[right]==target)
+                if (args[left] + args[right] == target)
                 {
                     return [left, right];
                 }
                 left++;
                 right--;
             }
-            return [0,0];
+            return [0, 0];
         }
-    }
 
-    public int[] Execute2(int[] args, int target)
+
+        public int[] Execute2(int[] args, int target)
         {
             var dict = new Dictionary<int, int>();
             for (int i = 0; i < args.Length; i++)
@@ -39,3 +39,5 @@ namespace Algorithems.AddTwoNums
             return new int[] { -1, -1 };
         }
     }
+}
+    
