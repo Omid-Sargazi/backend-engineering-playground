@@ -14,7 +14,10 @@ namespace API_Projects.Application.Todos.Services
         }
         public void AddTodo(TodoDto todoDto)
         {
-            _todoList.Add(todoDto);
+            var result = _validateTodo.ValidateWithMesage(todoDto);
+            if(result.Error== ErrorCodes.Success)
+                _todoList.Add(todoDto);
+
         }
 
         public void Delete(int id)

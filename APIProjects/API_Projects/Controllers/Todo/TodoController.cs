@@ -9,8 +9,7 @@ namespace API_Projects.Controllers.Todo
     [Route("api/[controller]")]
     public class TodoController:ControllerBase
     {
-        //private static readonly List<TodoDto> _todoDtos = [];
-        //private readonly IValidateTodo _validateTodo;
+        
         private readonly ITodoService _todoService;
 
 
