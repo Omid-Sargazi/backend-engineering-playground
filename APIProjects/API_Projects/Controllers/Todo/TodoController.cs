@@ -40,5 +40,12 @@ namespace API_Projects.Controllers.Todo
            
             return Ok(_todoService.FindById(id));
         }
+
+        [HttpPut]
+        public ActionResult<TodoDto> UpdateTodo(int id, string newTitle)
+        {
+            _todoService.Update(id, newTitle);
+            return Ok(GetTodoById(id));
+        }
     }
 }
