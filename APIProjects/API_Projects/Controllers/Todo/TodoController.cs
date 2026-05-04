@@ -9,10 +9,10 @@ namespace API_Projects.Controllers.Todo
     [Route("api/[controller]")]
     public class TodoController:ControllerBase
     {
-        private static readonly List<TodoDto> _todoDtos = [];
-        private readonly IValidateTodo _validateTodo;
+        //private static readonly List<TodoDto> _todoDtos = [];
+        //private readonly IValidateTodo _validateTodo;
         private readonly ITodoService _todoService;
-       
+
 
         public TodoController(ITodoService todoService)
         {
@@ -22,25 +22,14 @@ namespace API_Projects.Controllers.Todo
         [HttpGet]
         public ActionResult GetTodos()
         {
-            //if(_todoDtos.Any())
-            //    return Ok(_todoDtos);
-            //return NotFound("There isn`t any todos for today.");
+           
             return Ok(_todoService.GetAll());
         }
 
         [HttpPost]
         public ActionResult CreateTodo([FromBody]  TodoDto dto)
         {
-            //if (_validateTodo.Validate(dto)){
-            //    _todoDtos.Add(dto);
-            //}
            
-            //else
-            //{
-            //    return BadRequest("TItle Cannot be Empty");
-            //}
-            //return Ok(dto);
-
             _todoService.AddTodo(dto);
             return Ok();
         }
@@ -48,14 +37,7 @@ namespace API_Projects.Controllers.Todo
         [HttpGet("{id}")]
         public ActionResult<TodoDto> GetTodoById(int id)
         {
-            //var result = _todoDtos.FirstOrDefault(x => x.Id == id);
-            //if(result ==null)
-            //{
-            //    return NotFound($"there is not any todo by id:{id}");
-            //}
-
-            //return Ok(result);
-
+           
             return Ok(_todoService.FindById(id));
         }
     }

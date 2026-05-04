@@ -10,8 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<ITodoService, TodoService>();
-builder.Services.AddSingleton<IValidateTodo, ValidateTodo>();
+builder.Services.AddScoped<ITodoService, TodoService>();
+builder.Services.AddScoped<IValidateTodo, ValidateTodo>();
 
 var app = builder.Build();
 

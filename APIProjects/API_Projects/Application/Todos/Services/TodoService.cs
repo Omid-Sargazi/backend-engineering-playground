@@ -5,12 +5,11 @@ namespace API_Projects.Application.Todos.Services
 {
     public class TodoService : ITodoService
     {
-        private readonly List<TodoDto> _todoList;
+        private  readonly static List<TodoDto> _todoList = [];
         private readonly IValidateTodo _validateTodo;
 
         public TodoService(IValidateTodo validateTodo)
         {
-            _todoList = new List<TodoDto>();
             _validateTodo = validateTodo;
         }
         public void AddTodo(TodoDto todoDto)
