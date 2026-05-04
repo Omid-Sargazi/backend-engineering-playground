@@ -1,3 +1,6 @@
+using API_Projects.Application.Todos.Services;
+using API_Projects.Application.Todos.Validations;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddSingleton<ITodoService, TodoService>();
+builder.Services.AddSingleton<IValidateTodo, ValidateTodo>();
 
 var app = builder.Build();
 
