@@ -11,11 +11,13 @@ namespace API_Projects.Controllers.Todo
     {
         
         private readonly ITodoService _todoService;
+        private readonly IValidateTodo _validateTodo;
 
 
-        public TodoController(ITodoService todoService)
+        public TodoController(ITodoService todoService, IValidateTodo validateTodo)
         {
             _todoService = todoService;
+            _validateTodo = validateTodo;
         }
 
         [HttpGet]
@@ -28,9 +30,26 @@ namespace API_Projects.Controllers.Todo
         [HttpPost]
         public ActionResult CreateTodo([FromBody]  TodoDto dto)
         {
+            var validation = _validateTodo.Validate(dto);
+
+            if(validation.IsValid)
+            {
+                return BadRequest(new ApiResponse<object>
+                {
+                    Success = false,
+                    Errors = validation.Errors
+                }
+                );
+            }
+            _todoService.AddTodo(dto);
            
             _todoService.AddTodo(dto);
-            return Ok();
+            return CreatedAtAction(nameof(GetTodoById), new ApiResponse<TodoDto>
+            {
+                Success = true,
+                Data = dto
+            });
+
         }
 
         [HttpGet("{id}")]
