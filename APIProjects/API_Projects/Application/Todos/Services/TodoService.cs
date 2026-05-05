@@ -14,8 +14,8 @@ namespace API_Projects.Application.Todos.Services
         }
         public void AddTodo(TodoDto todoDto)
         {
-            var result = _validateTodo.ValidateWithMesage(todoDto);
-            if(result.Error== ErrorCodes.Success)
+            var result = _validateTodo.Validate(todoDto);
+            if(result.IsValid)
                 _todoList.Add(todoDto);
 
         }
