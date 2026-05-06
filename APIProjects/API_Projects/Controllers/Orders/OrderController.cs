@@ -7,7 +7,7 @@ namespace API_Projects.Controllers.Orders
     [Route("api/[controller]")]
     public class OrderController:ControllerBase
     {
-        private readonly static List<OrderDto> _newProducts = [];
+       
 
         public OrderController()
         {
@@ -15,16 +15,23 @@ namespace API_Projects.Controllers.Orders
         }
 
         [HttpPost]
-        public ActionResult GetNewProduct([FromBody] OrderDto newProduct)
+        public ActionResult CreateOrder([FromBody] API_Projects.Models.Order newOrder)
         {
-            _newProducts.Add(newProduct);
-            return Ok(newProduct);
+            var result = new API_Projects.Models.Order
+            {
+                CustomerName = newOrder.CustomerName,
+                Items = [new API_Projects.Models.OrderItem { ProductId=1,Quantity=10},
+                new API_Projects.Models.OrderItem { ProductId=2,Quantity=2},],
+                TotalPrice = newOrder.TotalPrice,
+            };
+            Data.Orders.Add(result);
+            return Ok(result);
         }
 
         [HttpGet]
-        public ActionResult GetNewProducts()
+        public ActionResult GetOrders()
         {
-            return Ok(_newProducts);
+            return Ok(Data.Orders);
         }
     }
 }
