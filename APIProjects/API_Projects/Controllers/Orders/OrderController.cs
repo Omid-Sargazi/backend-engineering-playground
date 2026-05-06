@@ -1,21 +1,21 @@
-﻿using API_Projects.Application.NewProduct;
+﻿using API_Projects.Application.Orders;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API_Projects.Controllers.NewProductt
+namespace API_Projects.Controllers.Orders
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class NewProductController:ControllerBase
+    public class OrderController:ControllerBase
     {
-        private readonly static List<NewProductDto> _newProducts = [];
+        private readonly static List<OrderDto> _newProducts = [];
 
-        public NewProductController()
+        public OrderController()
         {
             
         }
 
         [HttpPost]
-        public ActionResult GetNewProduct([FromBody] NewProductDto newProduct)
+        public ActionResult GetNewProduct([FromBody] OrderDto newProduct)
         {
             _newProducts.Add(newProduct);
             return Ok(newProduct);

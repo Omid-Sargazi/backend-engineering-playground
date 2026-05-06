@@ -1,6 +1,6 @@
-﻿namespace API_Projects.Application.NewProduct
+﻿namespace API_Projects.Application.Orders
 {
-    public class NewProductDto
+    public class Order
     {
         public int Id { get; set; }
         public string Name { get; set; }
