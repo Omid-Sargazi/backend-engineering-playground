@@ -15,17 +15,45 @@ namespace API_Projects.Controllers.Orders
         }
 
         [HttpPost]
-        public ActionResult CreateOrder([FromBody] API_Projects.Models.Order newOrder)
+        public ActionResult CreateOrder([FromBody] API_Projects.Models.Dtos.OrderDto newOrder)
         {
-            var result = new API_Projects.Models.Order
+           if(newOrder.CustomerName== null || newOrder.CustomerName=="")
             {
-                CustomerName = newOrder.CustomerName,
-                Items = [new API_Projects.Models.OrderItem { ProductId=1,Quantity=10},
-                new API_Projects.Models.OrderItem { ProductId=2,Quantity=2},],
-                TotalPrice = newOrder.TotalPrice,
-            };
-            Data.Orders.Add(result);
-            return Ok(result);
+                return BadRequest("CustomerName must be fill suitable name");
+            }
+          if(newOrder.Quantity <= 0)
+            {
+                return BadRequest("Qyt msut be greater than 0");
+            }
+            
+          
+            decimal totalPrice = 0;
+            var orderItems = new List<API_Projects.Models.OrderItem>();
+
+            foreach(var item in newOrder.Items)
+            {
+                if(item.Quantity<=0)
+                {
+                    return BadRequest("Quantity must be greater than 0");
+                }
+
+                var product = Data.Products.FirstOrDefault(p=>p.Id == item.ProductId);
+                if(product == null)
+                {
+                    return BadRequest($"Product with id{item.ProductId} not found");
+                }
+
+                totalPrice += product.Price * item.Quantity;
+                orderItems.Add(new Models.OrderItem
+                {
+                    Quantity = item.Quantity,
+                    ProductId = item.ProductId,
+                });
+
+            }
+                return Ok(orderItems);
+
+           
         }
 
         [HttpGet]
