@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using LinqLab.Domain.Repositories;
+using LINQLab.API.Middlewares;
 using LINQLab.Application;
 using LINQLab.Application.Handlers;
 using LINQLab.Application.Repositories;
@@ -34,6 +35,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseMiddleware<GlobalExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 app.UseAuthorization();

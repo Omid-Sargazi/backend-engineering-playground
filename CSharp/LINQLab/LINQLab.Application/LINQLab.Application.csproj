@@ -18,8 +18,4 @@
     <ProjectReference Include="..\LinqLab.Domain\LinqLab.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Abstractions\Todos\Queries\" />
-  </ItemGroup>
-
 </Project>
