@@ -8,7 +8,7 @@ namespace DesignPatternsInCSharp.Composition
 {
     class Payment
     {
-        private readonly IDiscountStrategy discount;
+        private readonly IDiscountStrategy _discount;
         private readonly ITaxStrategy _tax;
 
         public Payment(IDiscountStrategy discount, ITaxStrategy tax)

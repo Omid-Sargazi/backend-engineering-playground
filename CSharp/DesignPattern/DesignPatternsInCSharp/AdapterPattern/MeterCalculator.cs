@@ -21,14 +21,19 @@ namespace DesignPatternsInCSharp.AdapterPattern
 
     public class MeterToInchAdapterL : IInchCalculator
     {
+        private readonly MeterCalculator _meterCalculator;
         public MeterToInchAdapterL(MeterCalculator meterCalculator)
         {
             _meterCalculator = meterCalculator;
         }
-        private readonly MeterCalculator _meterCalculator;
+
         public double GetLengthInInches(double length)
         {
-            return _meterCalculator.GetLengthInMeters(length) * 39.3701;
+            throw new NotImplementedException();
         }
+        //public double GetLengthInInches(double length)
+        //{
+        //    return _meterCalculator.GetLengthInMeters(length) * 39.3701;
+        //}
     }
 }

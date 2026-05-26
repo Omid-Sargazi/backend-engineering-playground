@@ -4,6 +4,8 @@ namespace ReportingApi.Exporters
 {
     public class PdfExporter : IReportExporter
     {
+        public string Format => throw new NotImplementedException();
+
         public string Export(string reportData)
         {
             return $"PDF Export: {reportData}";
@@ -12,6 +14,8 @@ namespace ReportingApi.Exporters
 
     public class ExcelExporter : IReportExporter
     {
+        public string Format => throw new NotImplementedException();
+
         public string Export(string reportData)
         {
             return $"Excel Export: {reportData}";
