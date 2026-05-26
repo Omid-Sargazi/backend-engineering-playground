@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LINQLab.Application\LINQLab.Application.csproj" />
+    <ProjectReference Include="..\LiqLab.Infrastructure\LINQLab.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
