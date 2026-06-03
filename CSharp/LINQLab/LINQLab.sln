@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQLab.Infrastructure", "L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQLab.API", "LINQLab.API\LINQLab.API.csproj", "{A18C1001-0E1D-43BA-8EF1-83098A76F87E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NutshellBook", "NutshellBook\NutshellBook.csproj", "{3FD8EAEA-A8F5-41A0-B7A4-CD13A82F0061}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,18 @@ Global
 		{A18C1001-0E1D-43BA-8EF1-83098A76F87E}.Release|x64.Build.0 = Release|Any CPU
 		{A18C1001-0E1D-43BA-8EF1-83098A76F87E}.Release|x86.ActiveCfg = Release|Any CPU
 		{A18C1001-0E1D-43BA-8EF1-83098A76F87E}.Release|x86.Build.0 = Release|Any CPU
+		{3FD8EAEA-A8F5-41A0-B7A4-CD13A82F0061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FD8EAEA-A8F5-41A0-B7A4-CD13A82F0061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FD8EAEA-A8F5-41A0-B7A4-CD13A82F0061}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3FD8EAEA-A8F5-41A0-B7A4-CD13A82F0061}.Debug|x64.Build.0 = Debug|Any CPU
+		{3FD8EAEA-A8F5-41A0-B7A4-CD13A82F0061}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3FD8EAEA-A8F5-41A0-B7A4-CD13A82F0061}.Debug|x86.Build.0 = Debug|Any CPU
+		{3FD8EAEA-A8F5-41A0-B7A4-CD13A82F0061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FD8EAEA-A8F5-41A0-B7A4-CD13A82F0061}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FD8EAEA-A8F5-41A0-B7A4-CD13A82F0061}.Release|x64.ActiveCfg = Release|Any CPU
+		{3FD8EAEA-A8F5-41A0-B7A4-CD13A82F0061}.Release|x64.Build.0 = Release|Any CPU
+		{3FD8EAEA-A8F5-41A0-B7A4-CD13A82F0061}.Release|x86.ActiveCfg = Release|Any CPU
+		{3FD8EAEA-A8F5-41A0-B7A4-CD13A82F0061}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

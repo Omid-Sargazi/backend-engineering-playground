@@ -24,6 +24,7 @@ namespace LINQLab.API.Controllers
             return Ok(id);
         }
 
+        [HttpGet("{id}")]
         public async Task<ActionResult<TodoDto>> GetTodoById(Guid id)
         {
             var query = new GetTodoByIdQuery { Id = id };
