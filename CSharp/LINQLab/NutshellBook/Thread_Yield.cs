@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace NutshellBook
 {
-    public class Thread_Yield
+    public  class Thread_Yield
     {
-        static void Run()
+        public void Run()
         {
             new Thread(PrintB).Start();
-
-            for(int i = 0; i < 10; i++)
+            Console.WriteLine();
+            for (int i = 0; i < 5; i++)
             {
-                Console.WriteLine("A");
+                Console.Write("A");
                 Thread.Yield();
             }
         }
@@ -24,11 +24,11 @@ namespace NutshellBook
         {
             for(int i=0;i<5;i++)
             {
-                Console.WriteLine("B");
+                Console.Write("B");
             }
         }
     }
 }
 
     
-}
+
