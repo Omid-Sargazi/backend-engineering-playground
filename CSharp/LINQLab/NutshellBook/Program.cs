@@ -71,7 +71,7 @@ using NutshellBook;
 //Console.WriteLine($"Processing complete. Sum: {sum}");
 
 Console.WriteLine("6/15/2026");
-
+bool _done = false;
 
 new Thread(GO).Start();
 GO();
@@ -80,6 +80,10 @@ void GO()
 {
     for(int cycles = 0;cycles<5;cycles++)
     {
-        Console.Write("?");
+        if(!_done)
+        {
+            _done = true;
+            Console.Write("Done");
+        }
     }
 }
